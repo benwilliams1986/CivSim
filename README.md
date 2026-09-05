@@ -1,41 +1,33 @@
-# Birth of Civilization — Free Autonomous Simulation v0.4
+# Birth of Civilization — Free Autonomous Simulation v0.5
 
-This version expands the prototype without adding any paid services.
+Free browser simulation with no paid APIs.
 
-## New systems
+## v0.5 improvements
 
-- Long-term character memories
-- Trust scores between every pair of characters
-- Promises and promise keeping/breaking
-- Knowledge transfer and teaching
-- Disagreements based on personality/opinions
-- Skill growth
-- Discovery of resource locations
-- Crafting experiments
-- Technology progression
-- Fibre and clay resources
-- Stone Tools, Cordage, Clay Working, Food Storage and Improved Shelter
-- Local Kokoro TTS, no paid API
+- Multi-turn local conversations
+- Characters ask about food, stone, timber, plans, memories, opinions and technology
+- Answers can come from the character's own stored memories
+- Follow-up questions
+- Knowledge transfer after conversations
+- Conversation-created promises
+- Different topic preferences by personality and role
+- Mobile / Balanced / Desktop performance modes
+- requestAnimationFrame rendering
+- AI decisions run less often than movement/rendering
+- UI refresh is throttled instead of rebuilding every simulation tick
+- Local TTS audio cache
+- Optional spoken lines toggle
+- Conversation length is reduced automatically on Mobile mode
 
-## Zero-cost design
+## GitHub Pages
 
-The game simulation, dialogue logic, memories, trust, learning and technology systems all run in JavaScript locally.
-Speech uses Kokoro locally in the browser via WebAssembly.
-There are no API keys and no usage fees.
+Upload these at the root of the repository:
 
-## Run
+- index.html
+- package.json
+- vite.config.js
+- README.md
+- src/main.js
+- .github/workflows/deploy.yml
 
-1. Install Node.js
-2. In this folder:
-   npm install
-3. Start:
-   npm run dev
-4. Open the local URL shown by Vite
-5. Click Load Free Voices if you want speech
-6. Click Start
-
-## Notes
-
-The free TTS model is heavy for mobile devices. The game still works without loading voices.
-
-The current conversational intelligence is emergent but rule/utility driven, not a cloud LLM. That is deliberate to keep the game free.
+Then use Settings → Pages → Source → GitHub Actions.
