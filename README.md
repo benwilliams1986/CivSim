@@ -1,33 +1,42 @@
-# Birth of Civilization — Free Autonomous Simulation v0.5
+# Birth of Civilization v0.6
 
-Free browser simulation with no paid APIs.
+## What changed
 
-## v0.5 improvements
+### Chat history
+The conversation/event history is now positioned beside the game world instead of at the bottom.
+It auto-scrolls and includes an All / Chat filter.
 
-- Multi-turn local conversations
-- Characters ask about food, stone, timber, plans, memories, opinions and technology
-- Answers can come from the character's own stored memories
-- Follow-up questions
-- Knowledge transfer after conversations
-- Conversation-created promises
-- Different topic preferences by personality and role
-- Mobile / Balanced / Desktop performance modes
-- requestAnimationFrame rendering
-- AI decisions run less often than movement/rendering
-- UI refresh is throttled instead of rebuilding every simulation tick
-- Local TTS audio cache
-- Optional spoken lines toggle
-- Conversation length is reduced automatically on Mobile mode
+### Voice performance
+Voice is OFF by default.
+Speech generation is non-blocking and skipped if the local TTS engine is already busy.
+The simulation never waits for spoken audio.
+Mobile mode does not try to speak every turn.
+
+### Graphics
+The canvas renderer now includes:
+- textured grass
+- river banks and moving water lines
+- improved trees and rocks
+- richer food/fibre/clay graphics
+- character body sprites and shadows
+- campfire glow
+- shelter and storage drawings
+- worn walking paths
+- rain and cloudy weather
+- day/night lighting
+- animated vegetation/water
+
+### Performance modes
+Mobile / Balanced / Desktop presets change simulation rate, resource density and weather detail.
 
 ## GitHub Pages
+Replace your existing project files with this version and keep this structure:
 
-Upload these at the root of the repository:
+.github/workflows/deploy.yml
+src/main.js
+index.html
+package.json
+vite.config.js
+README.md
 
-- index.html
-- package.json
-- vite.config.js
-- README.md
-- src/main.js
-- .github/workflows/deploy.yml
-
-Then use Settings → Pages → Source → GitHub Actions.
+Then commit to `main`. GitHub Pages should rebuild automatically.
